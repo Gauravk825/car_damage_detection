@@ -1,6 +1,6 @@
-train: ../dataset/train/images
-val: ../dataset/valid/images
-test: ../dataset/test/images
+train: D:/Pg-DAI/CV/car_damage_detection/dataset/train/images
+val: D:/Pg-DAI/CV/car_damage_detection/dataset/test/images
+test: D:/Pg-DAI/CV/car_damage_detection/dataset/test/images
 
 names: 
   0: crack

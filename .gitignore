@@ -8,7 +8,9 @@ __pycache__/
 
 # Distribution / packaging
 #results/
-dataset1/
+ppt_and_report/
+data1.yaml/
+dataset/
 .Python
 build/
 develop-eggs/

@@ -1,5 +1,6 @@
 from ultralytics import YOLO
 import json
+import numpy as np
 
 def main():
     # Load the trained model
@@ -8,17 +9,17 @@ def main():
     # Perform validation
     results = model.val(data='data1.yaml')
     
-    # Extract evaluation metrics directly from the results object
+    # Save all values as lists
     metrics = {
-        'precision': results.box.map50,  # mAP at IoU=0.50
-        'recall': results.box.map,       # mAP at IoU=0.50:0.95
-        'mAP_50': results.box.map50,     # mAP at IoU=0.50
-        'mAP_50_95': results.box.map,    # mAP at IoU=0.50:0.95
-        'f1_score': results.box.f1,      # F1 score
+        'precision': results.box.map50.tolist(),  # Convert NumPy array to list
+        'recall': results.box.map.tolist(),       # Convert NumPy array to list
+        'mAP_50': results.box.map50.tolist(),     # Convert NumPy array to list
+        'mAP_50_95': results.box.map.tolist(),    # Convert NumPy array to list
+        'f1_score': results.box.f1.tolist(),      # Convert NumPy array to list
     }
     
     # Save the metrics to a JSON file
-    with open('results/validation_reports.json', 'w') as f:
+    with open('D:/Pg-DAI/CV/car_damage_detection/results/predictions/validation_reports.json', 'w') as f:
         json.dump(metrics, f, indent=4)
 
 if __name__ == "__main__":

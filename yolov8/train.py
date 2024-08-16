@@ -2,13 +2,13 @@ import os
 from ultralytics import YOLO
 
 def main():
-    # Initialize YOLOv8 model (use a pre-trained model or initialize a new one)
+    # Initialize YOLOv8 model 
     model = YOLO('yolov8s.pt')  # Replace with 'yolov8m.pt', 'yolov8l.pt', etc., if needed
     
     # Train the model
     model.train(
         data='data1.yaml',          # Path to the dataset YAML file
-        epochs=1,                 # Number of training epochs
+        epochs=20,                 # Number of training epochs
         imgsz=640,                 # Image size
         optimizer='SGD',           # Optimizer (e.g., SGD, Adam)
         lr0=0.01,                  # Initial learning rate
